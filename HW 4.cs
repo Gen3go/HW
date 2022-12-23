@@ -5,18 +5,14 @@ int num2 = Convert.ToInt32(Console.ReadLine());
 
 int num3 = Convert.ToInt32(Console.ReadLine());
 
-int Max = 0;
+int Max = num1;
 
-if (num1 > num2)
+if (num1 > Max)
 
-  Max = (num1);
+  Max = num2;
 
-else (num2 > num3)
+if (num2 > Max)
 
-  Max = (num2);
-
-else
-
-    Max = (num3);
+  Max = (num3);
 
 System.Console.WriteLine(Max);
