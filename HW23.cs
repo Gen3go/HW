@@ -10,5 +10,5 @@ for (int i = 1; i<= N; i++)
 
 
 
-System.Console.WriteLine(Math.Pow(i, 3));
+System.Console.Write(Math.Pow(i, 3) + ",");
 
