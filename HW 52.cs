@@ -31,16 +31,18 @@ void PrintArray(int [,] array)
         }
 }
 
-void FindRithmeticNumber(int [,] array)
- {   int Rithmetic = 0;
-    for(int i = 0; i < array.GetLength(0); i++)
-        {  
-            for(int j = 0; j < array.GetLength(0); j++)
+void FindRithmeticNumber(double [,] array)
+ {   
+    for(var j = 0; j < array.GetLength(1); j++)
+        {   double sum = 0;
+            for(var i = 0; i < array.GetLength(0); i++)
             {   
-                if( [j] = 0; )
-                Rithmetic += array[i, j];
-            }
+                sum += array[i, j];
 
+            }
+            double average = sum / array.GetLength(0);
+            System.Console.WriteLine("Среднее по " + (j + 1) + "столбцу равно - " + Math.Round(average, 1));
+    
         }
 
 }
