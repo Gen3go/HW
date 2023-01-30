@@ -5,7 +5,7 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-
+/*
 void Array(int [,] array)
 
 {   Random rd = new Random();
@@ -56,3 +56,54 @@ double summ3 = FindRithmeticNumber(array);
 System.Console.WriteLine();
 System.Console.WriteLine("Среднеарифметическое 1й строки: " + summ1 + " Среднеарифметическое 2й строки: " + summ2 + " Среднеарифметическое 3й строки: " + summ3);
 
+*/
+
+void Array(int [,] array)
+
+{   Random rd = new Random();
+    for(int i = 0; i < array.GetLength(0); i++)
+        {
+            for(int j = 0; j < array.GetLength(1); j++)
+            {
+                array[i, j] = rd.Next(1, 10);
+            
+            }
+        
+        }            
+}
+void PrintArray(int [,] array)
+{
+    for(int i = 0; i < array.GetLength(0); i++)
+        {
+            for(int j = 0; j < array.GetLength(1); j++)
+
+                {
+                    System.Console.Write(array[i, j] + " ");
+                }
+            System.Console.WriteLine();
+        }
+}
+
+double FindRithmeticNumber(int [,] array)
+ {  double summ = 0; 
+    double count = 0;
+    for(int i = 0; i < array.GetLength(0); i++)
+    {   
+        for(int j = 0; j < array.GetLength(1); j++)
+        {
+            if(j == 0)
+            summ +=array[i, j];   
+        }
+        count = summ / array.GetLength(0);
+    }
+return count;
+}
+
+int[,] array = new int [3, 4];
+Array(array);
+PrintArray(array);
+double summ1 = FindRithmeticNumber(array);
+double summ2 = FindRithmeticNumber(array);
+double summ3 = FindRithmeticNumber(array);
+System.Console.WriteLine();
+System.Console.WriteLine("Среднеарифметическое 1го столбца: " + summ1 + " Среднеарифметическое 2го столбца: " + summ2 + " Среднеарифметическое 3го столбца: " + summ3);
